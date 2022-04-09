@@ -57,19 +57,28 @@ void loop() {
   // prepare packet to be delivered
   posicao.dFloat[0] = gps.location.lat();
   posicao.dFloat[1] = gps.location.lng();
-  
+
   uint8_t payload[12];
 
   //Latitude do Car
-  for (int i = 0; i < 4; i++)
-  {
-    payload[i] = ((posicao.dBytes[0]) >> (24 - ( 8 * i )) & 0xff);
-  }
+  // for (int i = 0; i < 4; i++)
+  // {
+  //   payload[i] = ((posicao.dBytes[0]) >> (24 - ( 8 * i )) & 0xff);
+  // }
 
   //Longitude Car
-  for (int i = 4; i < 8; i++)
+  // for (int i = 4; i < 8; i++)
+  // {
+  //   payload[i] = ((posicao.dBytes[1]) >> (24 - ( 8 * (i - 4) )) & 0xff);
+  // }
+
+  // Position
+  for (int j = 0; j < 2; j++)
   {
-    payload[i] = ((posicao.dBytes[1]) >> (24 - ( 8 * (i - 4) )) & 0xff);
+    for (int i = 0; i < 4; i++)
+    { 
+        payload[i + (j * 4)] = ((posicao.dBytes[j]) >> (24 - ( 8 * (i + (j * 4)) )) & 0xff); 
+    }
   }
 
   //packet sent
