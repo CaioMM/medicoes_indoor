@@ -90,4 +90,13 @@ void loop() {
   rf95.send(payload, sizeof(payload));
   rf95.waitPacketSent();
   pkt_sent+=1;
+
+  for (int i = 0; i < sizeof(payload); i++)
+  {
+    Serial.print(payload[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
+  
+  delay(100);
 }
