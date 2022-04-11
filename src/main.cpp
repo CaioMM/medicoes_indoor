@@ -76,9 +76,9 @@ void loop() {
      Serial.print(" ");
      Serial.print(rf95.lastSNR());
      Serial.print(" ");
-     Serial.print(posicao.dFloat[0],5);
+     Serial.print(posicao.dFloat[0],8);
      Serial.print(" ");
-     Serial.print(posicao.dFloat[1],5);
+     Serial.print(posicao.dFloat[1],8);
      Serial.print(" ");
      Serial.print(pkt_sent);
      Serial.print(" ");
