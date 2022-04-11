@@ -67,6 +67,7 @@ void loop() {
      Serial.print(posicao.dFloat[2],5);
      Serial.print(" ");
      Serial.print(posicao.dFloat[3],5);
+     Serial.print(" ");
      Serial.print(SF);
      Serial.print(" ");
      Serial.print(BANDWIDTH);
