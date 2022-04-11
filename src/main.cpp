@@ -83,6 +83,8 @@ void loop() {
      Serial.print(pkt_sent);
      Serial.print(" ");
      Serial.print(pkt_received);
+     Serial.print(" ");
+     Serial.print(pkt_sent - pkt_received);
 
      Serial.println();
    }
