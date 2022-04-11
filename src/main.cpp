@@ -82,6 +82,7 @@ void loop() {
   }
 
   //packet sent
+  pkt_sent+=1;
   for (int i = 8; i < 12; i++)
   {
     payload[i] = (pkt_sent >> (24 - ( 8 * (i - 8) )) & 0xff);
@@ -89,7 +90,6 @@ void loop() {
 
   rf95.send(payload, sizeof(payload));
   rf95.waitPacketSent();
-  pkt_sent+=1;
 
   for (int i = 0; i < sizeof(payload); i++)
   {
