@@ -79,8 +79,9 @@ void loop() {
      Serial.print(" ");
      Serial.print(posicao.dFloat[1],5);
      Serial.print(" ");
-     Serial.print(pkt_sent);
-     Serial.print(pkt_received);
+     Serial.print(pkt_sent, HEX);
+     Serial.print(" ");
+     Serial.print(pkt_received, HEX);
 
      Serial.println();
    }
